@@ -1,27 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
   styleUrls: ['./registration-form.component.css']
 })
-export class RegistrationFormComponent {
-  email!: string;
-  name!: string;
-  phoneNumber!: string;
-  password!: string;
-  confirmPassword!: string;
+export class RegistrationFormComponent implements OnInit {
+  
+  signup:FormGroup|any;
+constructor() { }
+  ngOnInit(): void {
+    this.signup = new FormGroup({
+      'fname':new FormControl(),
+      'email':new FormControl(),
+      'pNumber':new FormControl(),
+      'password':new FormControl(),
+      'confirm-password':new FormControl()
 
-  onSubmit() {
-    // Perform email verification using a service or API
-    // If the password is valid, register the user
-    if (this.password === 'valid-password'&& this.password === this.confirmPassword) {
-      console.log('Registration successful!');
-    } else if (this.password !== this.confirmPassword) {
-      console.log('Password Does not match');}
-      else{
-        console.log('Registration failed!');
-      }
-    }
+
+    })
   }
+  signUpData(signup:FormGroup){
+    console.log(this.signup.value);
+  }
+}
 

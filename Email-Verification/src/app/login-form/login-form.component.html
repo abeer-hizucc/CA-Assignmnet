@@ -2,7 +2,7 @@
     <form [formGroup]="login" (ngSubmit)="logindata(login)">
         <h1>Login</h1>
         <div class="form-group">
-            <label >User Name</label>
+            <label >Email</label>
             <input type="text" formControlName="fname" class = "form-control mb-3 mt-3" placeholder="Enter Email"/>
 
         </div>
@@ -11,10 +11,11 @@
             <input type="text" formControlName="password" class = "form-control mb-3 mt-3" placeholder="Enter Password">
         </div>
         <span>Create New Account <a routerLink="signup">Sign Up</a></span>
+        <br>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class = "btn btn-success">Login</button>
+    
+        </div>
     </form>
-    <br>
-    <div class="d-flex justify-content-center">
-        <button type="button" class = "btn btn-success">Login</button>
-
-    </div>
+   
     </div>
