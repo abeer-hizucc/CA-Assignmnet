@@ -1,9 +1,68 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  "signup": [
+    {
+      "fname": "kuABHDXKB",
+      "email": "ADADC",
+      "pNumber": "ACASC",
+      "password": "SACDASC",
+      "confirm-password": "ASCAC",
+      "id": 1
+    },
+    {
+      "fname": "ADDA",
+      "email": "DDSAFV",
+      "pNumber": "SFSVS",
+      "password": "SVSVS",
+      "confirm-password": "SFSFVSF",
+      "id": 2
+    },
+    {
+      "fname": "DSCSZC",
+      "email": "CZC ZCZSC",
+      "pNumber": "CZCZSSCX",
+      "password": "vxvdvdv",
+      "confirm-password": "dvsvc",
+      "id": 3
+    },
+    {
+      "fname": "adadad",
+      "email": "adadadawd",
+      "pNumber": "adacadcadw",
+      "password": "cacsac",
+      "confirm-password": "adadad",
+      "id": 4
+    },
+    {
+      "fname": "sadawd",
+      "email": "dawdad",
+      "pNumber": "SXdad",
+      "password": "asdaacac",
+      "confirm-password": "adadawd",
+      "id": 5
+    },
+    {
+      "fname": "dsfsaef",
+      "email": "sfsfsf",
+      "pNumber": "awdad",
+      "password": "aDWADAWD",
+      "confirm-password": "CAZCdszf",
+      "id": 6
+    },
+    {
+      "fname": "adad",
+      "email": "dad",
+      "pNumber": "adad",
+      "password": "adad",
+      "confirm-password": "adaa",
+      "id": 7
+    },
+    {
+      "fname": "wadawdawd",
+      "email": "awdadw",
+      "pNumber": "dadwqawd",
+      "password": "dawdaqd",
+      "confirm-password": "wadawd",
+      "id": 8
+    }
+  ]
+}
