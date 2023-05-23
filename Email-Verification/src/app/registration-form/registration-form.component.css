@@ -1,0 +1,30 @@
+.form-box-reg{
+    width: 500px;
+    height: auto;
+    padding:25px;
+    background-color: rgb(146, 230, 38);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+   
+
+}
+.label-design{
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(104, 99, 102);
+}
+.word-design{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(88, 9, 34, 0.815);
+}
+.custom-btn{
+    width:100px;
+    height: 40px;;
+}
+.hello{
+    margin-left: 12px;
+}
