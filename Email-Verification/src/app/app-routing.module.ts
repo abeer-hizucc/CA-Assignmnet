@@ -5,7 +5,7 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  {redirectTo:'',path:'login',pathMatch:'full'},
+  {redirectTo:'',path:'login',pathMatch:'full',component:LoginFormComponent},
   {path:'login', component:LoginFormComponent},
   {path:'signup', component:RegistrationFormComponent},
   {path:'dashboard', component:DashboardComponent}
