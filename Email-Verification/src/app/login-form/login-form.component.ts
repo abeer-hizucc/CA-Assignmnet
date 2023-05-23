@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component,OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-form',
@@ -8,14 +11,32 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
 login :FormGroup|any;
-  constructor() { }
+  constructor(private router:Router, private http:HttpClient, private toast:ToastrService) { }
   ngOnInit(): void {
     this.login = new FormGroup({
-      'fname':new FormControl(),
+      'email':new FormControl(),
       'password':new FormControl()
     })
   }
   logindata(login:FormGroup){
-    console.log(this.login.value)
+    console.log(this.login.value);
+    this.http.get<any>('http://localhost:3000/signup').subscribe((res)=>{
+      const user = res.find((a:any)=>a.email === this.login.value.email && a.password === this.login.value.password);
+      if(user){
+        alert("Login Successful");
+        this.toast.success(this.login.value.fname,'Login Successful');
+        this.login.reset();
+        this.router.navigate(['dashboard']);
+      }
+      else{
+        alert("User Not Found");
+        this.router.navigate(['login']);
+      }
+    },err=>{
+      alert("Something went wrong");
+      this.login.reset();
+    }
+    );
+    
   }
 }
