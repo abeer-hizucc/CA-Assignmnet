@@ -1,0 +1,7 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .nav-item:hover{
+    background-color: #71b1f1;
+    text-transform:capitalize;
+  }
