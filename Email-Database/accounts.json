@@ -95,6 +95,14 @@
       "password": "sfsf",
       "confirm-password": "sfsefs",
       "id": 12
+    },
+    {
+      "fname": "Zulker ",
+      "email": "zulker69@gmail.com",
+      "pNumber": "01402042069",
+      "password": "asasda",
+      "confirm-password": "dsdasd",
+      "id": 13
     }
   ]
 }
