@@ -29,13 +29,13 @@ constructor(private http:HttpClient, private toast:ToastrService,private router:
     console.log(this.signup.value);
     this.signUser = this.signup.value.fname;
     this.http.post<any>('http://localhost:3000/signup',this.signup.value).subscribe((res)=>{
-    alert("Registration Successful");  
+     
     this.toast.success(this.signUser,'Registration Successful');
       this.signup.reset();
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(["dashboard"]);
 
     },err=>{
-      alert('Something went wrong');
+      this.toast.error('Error',"Registration Failed");
       this.signup.reset();
     }
     )

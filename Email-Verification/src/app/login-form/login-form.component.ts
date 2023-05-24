@@ -23,17 +23,19 @@ login :FormGroup|any;
     this.http.get<any>('http://localhost:3000/signup').subscribe((res)=>{
       const user = res.find((a:any)=>a.email === this.login.value.email && a.password === this.login.value.password);
       if(user){
-        alert("Login Successful");
+        
         this.toast.success(this.login.value.fname,'Login Successful');
         this.login.reset();
         this.router.navigate(['dashboard']);
       }
       else{
-        alert("User Not Found");
+        //alert("User Not Found");
+        this.toast.error('Error',"User Not Found");
         this.router.navigate(['login']);
       }
     },err=>{
-      alert("Something went wrong");
+     // alert("Something went wrong");
+      this.toast.error('Error',"Something went wrong");
       this.login.reset();
     }
     );
