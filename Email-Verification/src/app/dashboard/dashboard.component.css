@@ -1,7 +1,61 @@
 .dropdown:hover .dropdown-menu {
     display: block;
+    background-color: #3397fa;
   }
   .nav-item:hover{
     background-color: #71b1f1;
     text-transform:capitalize;
   }
+  .contentt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .carousel-container {
+    width: 70%;
+  }
+  .dropdown-item{
+    background-color: #3397fa;
+    color: white;
+  }
+  .dropdown-item:hover{
+    background-color: #113b64;
+    color: white;
+    cursor: pointer;
+  }
+  .jello{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: solid;
+    font-size: larger;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+.col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.hero-1-title {
+    font-size: 3.25em;
+    line-height: 59px;
+    color: #3397fa;
+    margin-bottom: 10px;
+    padding: 10;
+    font-family: 'Times New Roman', Times, serif;
+}
+.hero-1-text{
+    margin-top: 10px;
+    font-size: 1.5em;
+}
