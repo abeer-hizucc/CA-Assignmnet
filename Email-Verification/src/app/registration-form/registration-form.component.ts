@@ -25,6 +25,7 @@ constructor(private http:HttpClient, private toast:ToastrService,private router:
 
     })
   }
+  
   signUpData(signup:FormGroup){
     console.log(this.signup.value);
     this.signUser = this.signup.value.fname;
