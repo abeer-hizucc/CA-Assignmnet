@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+
+import { SignupService } from '../services/signup.service';
 
 @Component({
   selector: 'app-registration-form',
@@ -13,33 +13,24 @@ export class RegistrationFormComponent implements OnInit {
   
 signup:FormGroup|any;
 signUser :any;
-constructor(private http:HttpClient, private toast:ToastrService,private router:Router,private form:FormBuilder) { }
+signProcess:any;
+constructor(private form:FormBuilder,private signupService:SignupService) { }
   ngOnInit(): void {
     this.signup = new FormGroup({
       'fname':new FormControl(null,[Validators.required,Validators.minLength(5)]),
       'email':new FormControl(null, [Validators.required,Validators.email]),
       'pNumber':new FormControl(null,[Validators.required, Validators.pattern(/^01\d{9}$/)]),
       'password':new FormControl(null, [Validators.required,Validators.minLength(8)]),
-      'confirm-password':new FormControl()
+      'confirm-password':new FormControl(null, [Validators.required])
 
 
     })
   }
-  
-  signUpData(signup:FormGroup){
-    console.log(this.signup);
-    this.signUser = this.signup.value.fname;
-    this.http.post<any>('http://localhost:3000/signup',this.signup.value).subscribe((res)=>{
-     
-    this.toast.success(this.signUser,'Registration Successful');
-      this.signup.reset();
-      this.router.navigate(["dashboard"]);
-
-    },err=>{
-      this.toast.error('Error',"Registration Failed");
-      this.signup.reset();
-    }
-    )
-  }
+ onSubmit(){
+if(this.signup.valid){
+  this.signupService.signUpData(this.signup);
+}
+}
+ 
 }
 
