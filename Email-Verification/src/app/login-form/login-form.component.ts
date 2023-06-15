@@ -3,6 +3,7 @@ import { Component,OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 import { SignupService } from '../services/signup.service';
+import { LoginValidators } from '../Custom-Validators/login-validators';
 
 @Component({
   selector: 'app-login-form',
@@ -15,7 +16,7 @@ login :FormGroup|any;
   ngOnInit(): void {
     this.login = new FormGroup({
       'email':new FormControl(),
-      'password':new FormControl()
+      'password':new FormControl(null,[LoginValidators.passwordLength]),
     })
   }
   onSubmit(){

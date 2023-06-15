@@ -24,12 +24,7 @@
       <div class="form-group">
         <label class="word-design">Confirm-Password</label>
         <input type="password" formControlName="confirm-password" class = "form-control mb-3 mt-3" placeholder="Re-enter Password">
-        <span 
-         *ngIf="signup.get('confirm-password').invalid
-          &&
-           signup.get('confirm-password').touched
-           &&
-           signup.get('password').value!=signup.get('confirm-password').value"
+        <span *ngIf="signup.get('confirm-password').touched"
            >Not same Password!</span>
       </div>
       <span class ="word-design">Already Have An Account?<a routerLink="/login" class="hello">Log In</a></span>

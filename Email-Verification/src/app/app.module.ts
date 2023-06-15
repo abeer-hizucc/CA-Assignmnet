@@ -32,8 +32,11 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
     ToastrModule.forRoot(
       {
         timeOut:3000,
-        positionClass:'toast-top-right',
-        preventDuplicates:true
+        positionClass:'toast-top-left',
+        preventDuplicates:true,
+        enableHtml:true,
+        progressBar:true,
+        progressAnimation:'increasing'
 
       }
     )

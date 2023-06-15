@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { SignupService } from '../services/signup.service';
+import { SigninValidators } from '../Custom-Validators/signin-validators';
 
 @Component({
   selector: 'app-registration-form',
@@ -21,7 +22,7 @@ constructor(private form:FormBuilder,private signupService:SignupService) { }
       'email':new FormControl(null, [Validators.required,Validators.email]),
       'pNumber':new FormControl(null,[Validators.required, Validators.pattern(/^01\d{9}$/)]),
       'password':new FormControl(null, [Validators.required,Validators.minLength(8)]),
-      'confirm-password':new FormControl(null, [Validators.required])
+      'confirm-password':new FormControl(null, [Validators.required],[SigninValidators.asyncCheckConfirmPassword]),
 
 
     })

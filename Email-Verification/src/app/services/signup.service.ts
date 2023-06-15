@@ -13,7 +13,7 @@ signUpData(signup:FormGroup){
     console.log(signup);
     this.http.post<any>('http://localhost:3000/signup',signup.value).subscribe((res)=>{
      
-    this.toast.success(signup.value.fname,'Registration Successful');
+    this.toast.success('Registration Successful, Visit the Site','Success!');
       signup.reset();
       this.router.navigate(["dashboard"]);
 
@@ -29,7 +29,7 @@ signUpData(signup:FormGroup){
       const user = res.find((a:any)=>a.email === login.value.email && a.password === login.value.password);
       if(user){
         
-        this.toast.success(login.value.fname,'Login Successful');
+        this.toast.success('You can visit the Website',"Success!");
         login.reset();
         this.router.navigate(['dashboard']);
       }
