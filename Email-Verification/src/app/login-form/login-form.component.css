@@ -1,6 +1,6 @@
 .form-box{
     width: 500px;
-    height: 400px;
+    height: 500px;
     padding:25px;
     background-color: rgb(146, 230, 38);
     position: absolute;
@@ -22,5 +22,9 @@
 }
 .custom-btn{
     width:100px;
-    height: 40px;;
+    height: 40px;
+}
+.custom-btn-google{
+    width:200px;
+    height: 40px;
 }

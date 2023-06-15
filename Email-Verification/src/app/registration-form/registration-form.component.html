@@ -4,33 +4,37 @@
       <div class="form-group">
           <label class=" word-design form-label">User Name</label>
           <input type="text" formControlName="fname" class = "form-control mb-3 mt-3" placeholder="Enter User-Name"[ngClass]="{'is-invalid':signup.controls.fname.errors&& signup.controls.fname.touched}"/>
-          <span  class="help-desk"*ngIf="signup.get('fname').invalid && signup.get('fname').touched">Username should be more than 5 characters!</span>
+          <span  class="text-danger"*ngIf="signup.get('fname').invalid && signup.get('fname').touched">Username should be more than 5 characters!</span>
       </div>
       <div class="form-group">
         <label class="word-design">Email</label>
-          <input type="text" formControlName="email" class = "form-control mb-3 mt-3" placeholder="Enter Email"/>
-          <span  *ngIf="signup.get('email').invalid && signup.get('email').touched">Please Enter Valid Email</span>
+          <input type="text" formControlName="email" class = "form-control mb-3 mt-3" placeholder="Enter Email"[ngClass]="{'is-invalid':signup.controls.email.errors&& signup.controls.email.touched}"/>
+          <span class="text-danger" *ngIf="signup.get('email').invalid && signup.get('email').touched">Please Enter Valid Email</span>
       </div>
       <div class="form-group">
         <label class="word-design">Phone Number</label>
-          <input type="text" formControlName="pNumber" class = "form-control mb-3 mt-3" placeholder="Enter Phone-Number" />
-          <span  *ngIf="signup.get('pNumber').invalid && signup.get('pNumber').touched">Please Enter Valid Phone Number</span>
+          <input type="text" formControlName="pNumber" class = "form-control mb-3 mt-3" placeholder="Enter Phone-Number" [ngClass]="{'is-invalid':signup.controls.pNumber.errors&& signup.controls.pNumber.touched}" />
+          <span class="text-danger" *ngIf="signup.get('pNumber').invalid && signup.get('pNumber').touched">Please Enter Valid Phone Number</span>
         </div>
       <div class="form-group">
           <label class="word-design">Password</label>
-          <input type="password" formControlName="password" class = "form-control mb-3 mt-3" placeholder="Enter Password">
-          <span  *ngIf="signup.get('password').invalid && signup.get('password').touched">Please Enter Valid Password</span>
+          <input type="password" formControlName="password" class = "form-control mb-3 mt-3" placeholder="Enter Password"[ngClass]="{'is-invalid':signup.controls.password.errors&& signup.controls.password.touched}">
+          <span class="text-danger" *ngIf="signup.get('password').invalid && signup.get('password').touched">Please Enter Valid Password</span>
         </div>
       <div class="form-group">
         <label class="word-design">Confirm-Password</label>
-        <input type="password" formControlName="confirm-password" class = "form-control mb-3 mt-3" placeholder="Re-enter Password">
-        <span *ngIf="signup.get('confirm-password').touched"
-           >Not same Password!</span>
+        <input type="password" formControlName="confirmpassword" class = "form-control mb-3 mt-3" placeholder="Re-enter Password"[ngClass]="{'is-invalid':signup.controls.confirmpassword.errors&& signup.controls.confirmpassword.touched}">
+        <span class="text-danger" *ngIf="signup.get('confirmpassword').touched && signup.get('confirmpassword').invalid">Not same Password!</span>
+          
       </div>
       <span class ="word-design">Already Have An Account?<a routerLink="/login" class="hello">Log In</a></span>
       <br>
       <div class="d-flex justify-content-center">
         <button type="submit" [disabled]="!signup.valid" class = "btn btn-success mb-3 mt-3 custom-btn">Sign Up</button>
+  
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="button" class = "btn btn-success mb-3 mt-3 custom-btn-google"(click)="googleSignin()">SignUp With Google</button>
   
       </div>
   </form>
