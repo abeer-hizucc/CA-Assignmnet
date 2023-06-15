@@ -11,7 +11,7 @@ import { LoginValidators } from '../Custom-Validators/login-validators';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
-login :FormGroup|any;
+login!:FormGroup;
   constructor(private loginService:SignupService) { }
   ngOnInit(): void {
     this.login = new FormGroup({

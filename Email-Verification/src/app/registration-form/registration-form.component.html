@@ -3,7 +3,7 @@
       <h1 class="label-design">Sign Up</h1>
       <div class="form-group">
           <label class=" word-design form-label">User Name</label>
-          <input type="text" formControlName="fname" class = "form-control mb-3 mt-3" placeholder="Enter User-Name"/>
+          <input type="text" formControlName="fname" class = "form-control mb-3 mt-3" placeholder="Enter User-Name"[ngClass]="{'is-invalid':signup.controls.fname.errors&& signup.controls.fname.touched}"/>
           <span  class="help-desk"*ngIf="signup.get('fname').invalid && signup.get('fname').touched">Username should be more than 5 characters!</span>
       </div>
       <div class="form-group">
