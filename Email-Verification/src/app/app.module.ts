@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-//import { CommonModule } from '@angular/common';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { provideAnimations } from '@angular/platform-browser/animations';
+
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { OAuthModule } from 'angular-oauth2-oidc';
+
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SocialLoginModule,
+    OAuthModule.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot(
       {
@@ -43,18 +44,7 @@ import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 
 
   ],
   providers: [
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('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'),
-          },
-        ],
-      } as SocialAuthServiceConfig,
-    },
+    
   ],
   bootstrap: [AppComponent]
 })
