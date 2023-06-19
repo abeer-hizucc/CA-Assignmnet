@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AuthConfig, OAuthService } from "angular-oauth2-oidc";
+import { Observable } from "rxjs";
 const oAuthConfig:AuthConfig ={
     issuer:'https://accounts.google.com',
     redirectUri:'http://localhost:4200/dashboard',
@@ -18,6 +19,7 @@ export class GoogleApiService {
     login(): Promise<any> {
         return new Promise<any>((resolve, reject) => {
           this.oAuthSrevice.configure(oAuthConfig);
+          this.oAuthSrevice.logoutUrl = 'https://accounts.google.com/logout';
           this.oAuthSrevice.loadDiscoveryDocument().then(() => {
             this.oAuthSrevice.tryLoginImplicitFlow().then(() => {
               if (!this.oAuthSrevice.hasValidAccessToken()) {
@@ -38,5 +40,7 @@ export class GoogleApiService {
           });
         });
       }
-      
+     logout(){
+        this.oAuthSrevice.logOut();
+     }
 }
