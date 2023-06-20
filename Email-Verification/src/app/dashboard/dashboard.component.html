@@ -1,72 +1,6 @@
 <div class="dashboard-container">
 <div class ="dashboard-header">
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #e3f2fd;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="../../assets/dohatec.png" alt="">
-       </a>
-      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center mr-3" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">About Us</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="dashboard"role="button" data-bs-toggle="dropdown" aria-expanded="false"><b>Services</b> </a>
-            <ul class = "dropdown-menu">
-                <li><a class="dropdown-item"href="pki">PKI Enablement Service</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="dashboard"role="button" data-bs-toggle="dropdown" aria-expanded="false"><b>Products</b> </a>
-            <ul class = "dropdown-menu">
-              <li><a class="dropdown-item"href="pki">Signing Certificate</a></li>
-              <li><a class="dropdown-item"href="pki">Encryption Certificate</a></li>
-              <li><a class="dropdown-item"href="pki">Secure Email Certificate</a></li>
-              <li><a class="dropdown-item"href="pki">SSL Certificate</a></li>
-              <li><a class="dropdown-item"href="pki">PDF Signer</a></li>
-          </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="dashboard" role="button" data-bs-toggle="dropdown" aria-expanded="false"><b>Resources</b> </a>
-            <ul class="dropdown-menu">
-              <li class = "dropdown-item">Bangladesh ICT Act</li>
-              <li class = "dropdown-item">IT CA Rules, 2010</li>
-              <li class = "dropdown-item">Subscriber Agreement</li>
-              <li class = "dropdown-item">Relying Party Agreement</li>
-              
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="dashboard"role="button" data-bs-toggle="dropdown" aria-expanded="false"><b>Support</b> </a>
-            <ul class = "dropdown-menu">
-              <li class = "dropdown-item">User Guides</li>
-              <li class = "dropdown-item">Download Crypto USB Token Drivers</li>
-              <li class = "dropdown-item">Verify Certificate</li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="dashboard"role="button" data-bs-toggle="dropdown" aria-expanded="false"> <b>Repository</b> </a>
-            <ul class = "dropdown-menu">
-              <li class="dropdown-item">Subscriber Application Form</li>
-              <li class="dropdown-item">CrtificatePractice Statement(CPS)</li>
-              <li class="dropdown-item">eSign Guideline</li>
-              <li class="dropdown-item">Search Certificate</li>
-            </ul>
-          </li>
-          
-        </ul>
-      
-      </div>
-    </div>
-   <button class="navbar-brand" type="button" (click)="logout()">Logout</button>
-    <a class = "navbar-brand" href="#">
-        <img src="../../assets/logo.gif" alt="">
-      </a>
-  </nav>
+  <app-header></app-header>
 </div>
   <br>
 <!-- <h2>Secure Your Transactions</h2>
@@ -135,14 +69,6 @@
 </div>
 <div class ="dashboard-footer">
  
-  <ul>
-    <li>
-      <a routerLink=""></a>Repository </li>
-    <li>Privacy</li>
-    <li>Legal Disclaimer</li>
-    <li>Site Map</li>
-    <li>Contact</li>
-  </ul>
-  <p>Copyright &copy; 2023 Dohatec New Media. All rights reserved • Powered by Tata Consultancy Services </p>
+  <app-footer></app-footer>
 </div>
 </div>

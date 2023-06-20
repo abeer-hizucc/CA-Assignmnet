@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { GoogleApiService } from '../services/google-api.service';
+import { Component} from '@angular/core';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -7,16 +6,6 @@ import { Subscription } from 'rxjs';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
-  logoutToken!:Subscription;
-  constructor(private googleLogOut: GoogleApiService) { }
-  ngOnInit(): void {
-    
-  }
-  logout() {
-    this.googleLogOut.logout();
-    console.log('Logged out from Google');
-  }
-
-
+export class DashboardComponent  {
+  logoutToken!:Subscription; 
 }
