@@ -1,0 +1,19 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+    background-color: #3397fa;
+  }
+  .nav-item:hover{
+    background-color: #71b1f1;
+    text-transform:capitalize;
+  }
+  .dropdown-item{
+    background-color: #3397fa;
+    color: white;
+  }
+  .dropdown-item:hover{
+    background-color: #113b64;
+    color: white;
+    cursor: pointer;
+  }
+
+
