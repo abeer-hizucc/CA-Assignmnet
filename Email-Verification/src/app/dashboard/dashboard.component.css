@@ -59,12 +59,21 @@
     margin-top: 10px;
     font-size: 1.5em;
 }
-.dashboard-footer-unorederd-list{
+
+.dashboard-footer ul{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
   list-style-type: none;
+  padding-top:10px;
+}
+.dashboard-footer li:hover{
+  background-color: #3397fa;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+
 }
 .dashboard-container{
   display:grid;
@@ -88,9 +97,9 @@
   background-color: #e3f2fd;
   color: rgb(105, 98, 98);
 }
-.footer-content{
+.dashboard-footer p{
   display: flex;
   padding-top: 20px;
   justify-content: center;
-    
+  font-weight: bold;
 }
