@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { GetimageComponent } from './getimage/getimage.component';
+import { EKYCFormComponent } from './e-kyc-form/e-kyc-form.component';
 
 
 
@@ -24,7 +26,9 @@ import { FooterComponent } from './footer/footer.component';
     LoginFormComponent,
     DashboardComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    GetimageComponent,
+    EKYCFormComponent
   ],
   imports: [
     BrowserModule,
