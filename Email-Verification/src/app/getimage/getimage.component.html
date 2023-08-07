@@ -1,26 +1,37 @@
-<app-header></app-header>
-<div class="container">
-  <div class="col">
-      <div class="row align-items-center">
-          <div class="col-sm-5 col-md-6 col-lg-6 col-xl-6">
-            <input type="file" class="file-input"
-            [accept]="requiredFileType"
-            (change)="onFileSelected($event)" #fileUpload>
-     
-     <div class="file-upload">
-       {{fileName || "No file uploaded yet."}}
-     
-       <button class="btn btn-primary upload-btn" (click)="fileUpload.click()">
-         <i class="fa fa-paperclip">Submit NID Photo</i>
-       </button>
-     </div>
-     
-     <div class="progress">
-       <div class="progress-bar" role="progressbar" [style.width.%]="uploadProgress" *ngIf="uploadProgress"></div>
-       <i class="fa fa-trash" (click)="cancelUpload()" *ngIf="uploadProgress"></i>
-     </div>
-     
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <app-header></app-header>
+  </div>
+  <div class="dashboard-menu">
+    <div class="container">
+      <div class="col">
+          <div class="row align-items-center">
+              <div class="col-sm-5 col-md-6 col-lg-6 col-xl-6">
+                <input type="file" class="file-input"
+                [accept]="requiredFileType"
+                (change)="onFileSelected($event)" #fileUpload>
+         
+         <div class="file-upload">
+           {{fileName || "No file uploaded yet."}}
+         
+           <button class="btn btn-primary upload-btn" (click)="fileUpload.click()">
+             <i class="fa fa-paperclip">Submit NID Photo</i>
+           </button>
+         </div>
+         
+         <div class="progress">
+           <div class="progress-bar" role="progressbar" [style.width.%]="uploadProgress" *ngIf="uploadProgress"></div>
+           <i class="fa fa-trash" (click)="cancelUpload()" *ngIf="uploadProgress"></i>
+         </div>
+         
+                  </div>
               </div>
           </div>
       </div>
   </div>
+<div class="dashboard-footer">
+  <app-footer></app-footer>
+</div>
+  
+
+</div>

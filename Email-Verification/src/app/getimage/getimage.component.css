@@ -2,3 +2,27 @@
 .file-input {
     display: none;
   }
+  .dashboard-container{
+    display:grid;
+    height:100vh;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    "h h h"
+    ". c ."
+    "f f f";
+  
+  }
+  .dashboard-header{
+    grid-area: h;
+  
+  }
+  .dashboard-menu{
+    grid-area: c;
+  }
+  .dashboard-footer{
+    grid-area: f;
+    background-color: #e3f2fd;
+    color: rgb(105, 98, 98);
+  }
+  
