@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Subscription, finalize } from 'rxjs';
 import { Router } from '@angular/router';
+import { OCRResponse } from '../models/OCRRsponse.model';
+import { ResponseService } from '../services/ocrresponse.service';
 @Component({
   selector: 'app-getimage',
   templateUrl: './getimage.component.html',
@@ -15,7 +17,7 @@ export class GetimageComponent {
   uploadProgress!:number;
   uploadSub!: Subscription | null;
 
-  constructor(private http: HttpClient, private router:Router) {}
+  constructor(private http: HttpClient, private router:Router,private ocrResponse:ResponseService) {}
 
   onFileSelected(event:any) {
       const file:File = event.target.files[0];
@@ -40,6 +42,9 @@ export class GetimageComponent {
               }
       
             }if (event.type == HttpEventType.Response) {
+              const response:OCRResponse = event.body as OCRResponse;
+              this.ocrResponse.setResponseData(response);
+              console.log('Response Data:', response);
               
               this.router.navigate(['/eKYCForm']);
             }
