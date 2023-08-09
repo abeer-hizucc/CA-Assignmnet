@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Subscription, finalize } from 'rxjs';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-getimage',
   templateUrl: './getimage.component.html',
@@ -14,7 +15,7 @@ export class GetimageComponent {
   uploadProgress!:number;
   uploadSub!: Subscription | null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router:Router) {}
 
   onFileSelected(event:any) {
       const file:File = event.target.files[0];
@@ -22,9 +23,9 @@ export class GetimageComponent {
       if (file) {
           this.fileName = file.name;
           const formData = new FormData();
-          formData.append("thumbnail", file);
+          formData.append("image", file);
 
-          const upload$ = this.http.post("/api/thumbnail-upload", formData, {
+          const upload$ = this.http.post("http://localhost:9090/perform-ocr", formData, {
               reportProgress: true,
               observe: 'events'
           })
@@ -38,6 +39,9 @@ export class GetimageComponent {
                 this.uploadProgress = Math.round(100 * (event.loaded / event.total));
               }
       
+            }if (event.type == HttpEventType.Response) {
+              
+              this.router.navigate(['/eKYCForm']);
             }
           })
       }
