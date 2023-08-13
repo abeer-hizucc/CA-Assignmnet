@@ -5,6 +5,7 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GetimageComponent } from './getimage/getimage.component';
 import{EKYCFormComponent} from './e-kyc-form/e-kyc-form.component';
+import { EKYC2ndFormComponent } from './e-kyc2nd-form/e-kyc2nd-form.component';
 const routes: Routes = [
   {path:'',component:LoginFormComponent},
   {redirectTo:'',path:'login',pathMatch:'full',component:LoginFormComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path:'signup', component:RegistrationFormComponent},
   {path:'dashboard', component:DashboardComponent},
   {path:'eKYCRegister',component:GetimageComponent},
-  {path:'eKYCForm',component:EKYCFormComponent}
+  {path:'eKYCForm',component:EKYCFormComponent},
+  {path:'2ndeKYCForm',component:EKYC2ndFormComponent}
 ];
 
 @NgModule({

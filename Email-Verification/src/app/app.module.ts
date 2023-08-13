@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GetimageComponent } from './getimage/getimage.component';
 import { EKYCFormComponent } from './e-kyc-form/e-kyc-form.component';
+import { EKYC2ndFormComponent } from './e-kyc2nd-form/e-kyc2nd-form.component';
 
 
 
@@ -28,7 +29,9 @@ import { EKYCFormComponent } from './e-kyc-form/e-kyc-form.component';
     HeaderComponent,
     FooterComponent,
     GetimageComponent,
-    EKYCFormComponent
+    EKYCFormComponent,
+    EKYC2ndFormComponent
+
   ],
   imports: [
     BrowserModule,

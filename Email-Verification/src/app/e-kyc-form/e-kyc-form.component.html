@@ -2,7 +2,7 @@
   <app-header></app-header>
   <div class="content-container">
     <div class="container mt-5">
-      <form [formGroup]="eKYCForm">
+      <form [formGroup]="eKYCForm"(ngSubmit)="onSubmit()" *ngIf="!isSubmitting; else loadingTemplate">
         <div class="form-group">
           <label for="name">Name:</label>
           <input type="text" id="name" class="form-control" formControlName="name">
@@ -37,6 +37,13 @@
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </form>
+      <ng-template #loadingTemplate>
+        <div class="d-flex justify-content-center mt-4">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </ng-template>
     </div>
   </div>
   <app-footer></app-footer>
