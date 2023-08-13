@@ -3,31 +3,60 @@
     <app-header></app-header>
   </div>
   <div class="dashboard-menu">
+
     <div class="container">
+      
       <div class="col">
-          <div class="row align-items-center">
-              <div class="col-sm-5 col-md-6 col-lg-6 col-xl-6">
-                <input type="file" class="file-input"
-                [accept]="requiredFileType"
-                (change)="onFileSelected($event)" #fileUpload>
-         
-         <div class="file-upload">
-           {{fileName || "No file uploaded yet."}}
-         
-           <button class="btn btn-primary upload-btn" (click)="fileUpload.click()">
-             <i class="fa fa-paperclip">Submit NID Photo</i>
-           </button>
-         </div>
-         
-         <div class="progress">
-           <div class="progress-bar" role="progressbar" [style.width.%]="uploadProgress" *ngIf="uploadProgress"></div>
-           <i class="fa fa-trash" (click)="cancelUpload()" *ngIf="uploadProgress"></i>
-         </div>
-         
-                  </div>
-              </div>
+        <div class="row align-items-center">
+          <div class="col-sm-5 col-md-6 col-lg-6 col-xl-6">
+            <h1>e-KYC Registration
+            </h1>
+            <br>
+            <p class= "lead">E-KYC is a combination of paperless customer onboarding, promptly
+              identifying and verifying customer identity, maintaining KYC profile in a
+              digital form and determining customer risk grading through digital means.
+              It is a faster process of doing KYC of customer verifying his/her identity
+              document or bio-metric data. </p>
+              <br>
+              <p class="text-info display-6">Step-1: Submit Your NID softcopy(Front Cover)</p>
+              <br>
+            <input type="file" class="file-input"
+                   [accept]="requiredFileType"
+                   (change)="onFileSelected($event)" #fileUpload>
+             <div class="d-flex justify-content-between mt-3">      
+            <div class="file-upload">
+              <span [ngClass]="fileName ? 'text-success' : 'text-danger'">
+                {{ fileName || "No file uploaded yet." }}
+              </span>
+            </div>
+                <button class="btn btn-primary upload-btn" (click)="fileUpload.click()">
+                  <i class="fa fa-paperclip"></i> Submit NID Photo
+                </button>
+            
+              
+            </div>
+            
+            <div class="progress mt-3" *ngIf="uploadProgress !== null">
+              <div class="progress-bar" role="progressbar" [style.width.%]="uploadProgress"></div>
+              <i class="fa fa-trash" (click)="cancelUpload()"></i>
+              
+            </div>
+            <br>
           </div>
+        </div>
       </div>
+      <br>
+      <br>
+      <br>
+    <h5>NID Photo Requirements:</h5>
+    <br>
+     <ul>
+      <li class = "text-muted">The image should be clear and legible.</li>
+      <li class = "text-muted">The size of the should not exceed 5MB.</li>
+      <li class = "text-muted">Only .jpeg, .jpg and .png format image is supported.</li>
+     </ul>
+    </div>
+    
   </div>
 <div class="dashboard-footer">
   <app-footer></app-footer>
