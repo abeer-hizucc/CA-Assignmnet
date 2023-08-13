@@ -4,6 +4,11 @@
   <div class="content-container">
     
     <div class="container mt-5">
+      <h1>e-KYC Registration
+      </h1>
+      <br>
+      <p class="text-info display-6">Step 2: Fill Up the Form And Check The Details</p>
+      <br>
       <form [formGroup]="eKYCForm"(ngSubmit)="onSubmit()" *ngIf="!isSubmitting; else loadingTemplate">
         <div class="form-group">
           <label for="name">Name:</label>
