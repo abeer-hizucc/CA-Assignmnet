@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ResponseService } from '../services/ocrresponse.service';
+import { SharedButtonService } from '../services/registerDisable.service';
 
 @Component({
   selector: 'app-e-kyc-form',
@@ -13,7 +14,9 @@ export class EKYCFormComponent implements OnInit {
   responseService:ResponseService|any;
   
   
-  constructor(private form:FormBuilder,responseService:ResponseService) { 
+  constructor(private form:FormBuilder,responseService:ResponseService,
+              private buttonService:SharedButtonService
+    ) { 
     this.responseService = responseService;
   }
    
@@ -22,11 +25,12 @@ export class EKYCFormComponent implements OnInit {
     this.eKYCForm = this.form.group({
       'name': new FormControl(responseData?.name),
       'dob': new FormControl(responseData?.dob),
-      'idNo': new FormControl(responseData?.idNo),
+      'idNo': new FormControl({value:responseData?.idNo,disabled:true}),
       'address': new FormControl(null),
       'fatherName': new FormControl(null,[Validators.required,Validators.minLength(5)]),
       'motherName': new FormControl(null,[Validators.required,Validators.minLength(5)]),
   })
+  this.buttonService.setButtonDisabled(true);
 }
 
 
