@@ -40,6 +40,7 @@ onSubmit() {
   if (this.eKYCForm.valid) {
     this.isSubmitting = true;
     const formData = this.eKYCForm.value;
+    formData.idNo = this.responseService.getResponseData()?.idNo;
     this.formService.submitForm(formData);
    
   }
