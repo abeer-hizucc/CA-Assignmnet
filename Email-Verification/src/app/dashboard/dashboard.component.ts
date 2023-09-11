@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { Subscription } from 'rxjs';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,4 +9,8 @@ import { Subscription } from 'rxjs';
 })
 export class DashboardComponent  {
   logoutToken!:Subscription; 
+  constructor(private apiService:ApiService){}
+  ngOnInit() {
+    this.apiService.fetchData();
+  }
 }

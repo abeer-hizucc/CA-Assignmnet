@@ -33,6 +33,7 @@ export class EKYCFormComponent implements OnInit {
       'address': new FormControl(null),
       'fatherName': new FormControl(null,[Validators.required,Validators.minLength(5)]),
       'motherName': new FormControl(null,[Validators.required,Validators.minLength(5)]),
+      // 'email-address': new FormControl(null,[Validators.required,Validators.email])
   })
   this.buttonService.setButtonDisabled(true);
 }
