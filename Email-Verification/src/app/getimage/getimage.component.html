@@ -56,8 +56,26 @@
       <li class = "text-muted">Only .jpeg, .jpg and .png format image is supported.</li>
      </ul>
     </div>
-    
+    <br>
+    <h5 *ngIf="!isWebcamAvailable">Your Device do not have Webcam</h5>
+    <button class="btn btn-primary" (click)="checkPermission()">Check For Webcam Permission</button>
+    <div *ngIf="permissionAvailable">
+      
+      <br>
+      <webcam
+      [trigger] = "triggerObservable"
+      (imageCapture)="handleImage($event)"
+      ></webcam>
+      <button class="btn btn-primary" (click)="triggerSnapshot()">Take the Picture</button>
+      <br>
+      <div *ngIf ="webcamImage">
+        <h3>Captured Image</h3>
+        <br>
+        <img [src] = "webcamImage.imageAsDataUrl">
+      </div>
+    </div>
   </div>
+
 <div class="dashboard-footer">
   <app-footer></app-footer>
 </div>

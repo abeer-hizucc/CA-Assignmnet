@@ -17,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
 import { GetimageComponent } from './getimage/getimage.component';
 import { EKYCFormComponent } from './e-kyc-form/e-kyc-form.component';
 import { EKYC2ndFormComponent } from './e-kyc2nd-form/e-kyc2nd-form.component';
+import { WebcamModule } from 'ngx-webcam';
 
 
 
@@ -41,6 +42,7 @@ import { EKYC2ndFormComponent } from './e-kyc2nd-form/e-kyc2nd-form.component';
     HttpClientModule,
     OAuthModule.forRoot(),
     BrowserAnimationsModule,
+    WebcamModule,
     ToastrModule.forRoot(
       {
         timeOut:3000,
@@ -51,7 +53,8 @@ import { EKYC2ndFormComponent } from './e-kyc2nd-form/e-kyc2nd-form.component';
         progressAnimation:'increasing'
 
       }
-    )
+    ),
+   
 
   ],
   providers: [
